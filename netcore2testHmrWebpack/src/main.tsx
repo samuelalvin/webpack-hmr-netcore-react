@@ -3,22 +3,23 @@ import * as React from "react";
 import { AppContainer } from 'react-hot-loader';
 import * as ReactDOM from "react-dom";
 
-let route = require("./routes").route;
+let app = require("./app/app").App;
 
 function renderApp(Component) {
     ReactDOM.render(
         <AppContainer>
-            {Component}
+            <Component />
         </AppContainer>,
         document.getElementById("main")
     );
 }
 
-renderApp(route);
+renderApp(app);
 
 if (module.hot) {
-    module.hot.accept('./routes', () => {
-        route = require("./routes").route;
-        renderApp(route);
+    console.log("development euy");
+    module.hot.accept('./app/app', () => {
+        app = require("./app/app").route;
+        renderApp(app);
     });
 }

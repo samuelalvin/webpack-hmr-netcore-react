@@ -8,12 +8,4 @@ describe("app", function () {
         let app = TestUtils.renderIntoDocument(<App></App>) as React.Component;
         expect(app).toBeDefined();
     });
-
-    it("should be rendered without any problem", function () {
-        let renderer = ReactShallowRenderer.createRenderer();
-        renderer.render(<App></App>);
-
-        let result = renderer.getRenderOutput();
-        expect(result.type).toEqual("h1");
-    });
 });
