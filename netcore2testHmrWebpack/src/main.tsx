@@ -19,7 +19,7 @@ renderApp(app);
 if (module.hot) {
     console.log("development euy");
     module.hot.accept('./app/app', () => {
-        app = require("./app/app").route;
+        app = require("./app/app").App;
         renderApp(app);
     });
 }
